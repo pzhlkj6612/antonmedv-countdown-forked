@@ -23,6 +23,8 @@ const {tag_name: latest} = await resp.json()
 
 await $`go mod download`
 
+await $`go env -w CGO_ENABLED=1`
+
 await Promise.all(
   goos.flatMap(GOOS =>
     goarch.map(GOARCH =>
