@@ -10,8 +10,6 @@ jobs:
   build_artifacts:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      GITHUB_ACTION_REPOSITORY: ${{ github.action_repository }}
     steps:
       - uses: actions/checkout@v4.2.2
 
@@ -21,9 +19,11 @@ jobs:
           go-version-file: "./go.mod"
 
       - name: Build
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
 
           npm install zx
 
-          npx zx .github/scripts/build.mjs $GITHUB_ACTION_REPOSITORY
+          npx zx .github/scripts/build.mjs $GITHUB_REPOSITORY
