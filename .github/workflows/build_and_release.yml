@@ -21,9 +21,11 @@ jobs:
           go-version-file: "./go.mod"
 
       - name: Build
+        env:
+          GITHUB_ACTION_REPOSITORY: ${{ github.action_repository }}
         run: |
           set -euo pipefail
 
           npm install zx
 
-          npx zx .github/scripts/build.mjs ${{ github.action_repository }}
+          npx zx .github/scripts/build.mjs $GITHUB_ACTION_REPOSITORY
