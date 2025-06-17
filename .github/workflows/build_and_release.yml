@@ -25,9 +25,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: |
-          set -euo pipefail
-
-          npm install zx
-
-          npx zx .github/scripts/build.mjs $GITHUB_REPOSITORY
+        run: npx zx .github/scripts/build.mjs $GITHUB_REPOSITORY
