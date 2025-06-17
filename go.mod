@@ -1,6 +1,6 @@
 module github.com/antonmedv/countdown
 
-go 1.20
+go 1.23
 
 require github.com/nsf/termbox-go v1.1.1
 
