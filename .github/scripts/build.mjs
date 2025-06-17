@@ -3,7 +3,6 @@ $.verbose = true
 const bin = 'countdown'
 const repo = argv._[0]  // for forks
 const goos = [
-  'android',
   'linux',
   'darwin',
   'windows',
