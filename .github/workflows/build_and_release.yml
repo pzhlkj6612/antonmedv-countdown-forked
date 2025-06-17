@@ -24,6 +24,6 @@ jobs:
         run: |
           set -euo pipefail
 
-          npm install -g zx
+          npm install zx
 
           npx zx .github/scripts/build.mjs ${{ github.action_repository }}
